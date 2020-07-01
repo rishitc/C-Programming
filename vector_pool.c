@@ -3,7 +3,7 @@
 
 int main() {
     int vector_size, window_size, number_of_slides;
-    float *vector = NULL, *pooledVector = NULL, sum;
+    float *vector = NULL, *pooledVector = NULL;
     scanf("%d", &vector_size);
     scanf("%d", &window_size);
 
@@ -11,13 +11,13 @@ int main() {
 
     vector = malloc(sizeof(float)*vector_size);
     if(vector == NULL) {
-        printf("Falied to allocate %ld bytes of memory!\n", sizeof(int)*vector_size);
+        printf("Falied to allocate %lu bytes of memory!\n", sizeof(int)*vector_size);
         exit(1);
     }
 
     pooledVector = malloc(sizeof(float)*number_of_slides);
     if(pooledVector == NULL) {
-        printf("Falied to allocate %ld bytes of memory!\n", sizeof(int)*number_of_slides);
+        printf("Falied to allocate %lu bytes of memory!\n", sizeof(int)*number_of_slides);
         exit(1);
     }
 
@@ -26,6 +26,7 @@ int main() {
         scanf("%f", &vector[numCount]);
     }
 
+    int sum;
     for(int slideCount = 0; slideCount < number_of_slides; ++slideCount) {
         sum = 0;
         int count = 0;
