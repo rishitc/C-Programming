@@ -40,7 +40,7 @@ int N;
 		scanf(" %c",&input_chars[i]);
 	}
 	char input[100];
-	scanf("%s",input);
+	scanf("%99s",input);
 	
 	
 	int position=0,j=0; 
