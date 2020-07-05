@@ -11,10 +11,11 @@
     #include "types.h"
 #endif
 
-#ifndef SAFETYCHECKS_H
-    #define SAFETYCHECKS_H
-    #include "safetyChecks.h"
+#ifndef VECFUNC_H
+    #define VECFUNC_H
+    #include "vecfunc.h"
 #endif
+
 
 /*
     Creating an empty vector of the required size, specified by arg_count.
