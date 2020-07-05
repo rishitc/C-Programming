@@ -6,6 +6,11 @@
     #include <stdbool.h>
 #endif
 
+#ifndef STDDEF_H
+    #define STDDEF_H
+    #include <stddef.h>
+#endif
+
 #ifndef TYPES_H
     #define TYPES_H
     #include "types.h"
