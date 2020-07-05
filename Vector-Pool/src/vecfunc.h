@@ -1,6 +1,11 @@
 /*
     This is done to prevent multiple inclusions of the same header file in the project
 */
+#ifndef STDBOOL_H
+    #define STDBOOL_H
+    #include <stdbool.h>
+#endif
+
 #ifndef TYPES_H
     #define TYPES_H
     #include "types.h"
