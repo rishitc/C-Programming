@@ -1,20 +1,21 @@
-all: ./bin/check_vector
+COMMON_OBJ_FILES = ./obj/vector_ops.o ./obj/safetyChecks.o
+OBJ_FILES_TO_LINK_FOR_TESTS = ./obj/check_vector.o
+OBJ_FILES_TO_LINK_FOR_USER = ./obj/vector_pool.o
 
-
-OBJ_FILES_TO_LINK = ./obj/vector_ops.o ./obj/vector_pool.o ./src/safetyChecks.c
 OUTPUT_CHECK_BINARY_FILE = ./bin/check_vector
-OUTPUT_BINARY_FILE = ./bin/vector
+OUTPUT_USER_BINARY_FILE = ./bin/vector
+
+all: $(OUTPUT_CHECK_BINARY_FILE)
 
 
-$(OUTPUT_CHECK_BINARY_FILE): $(OBJ_FILES_TO_LINK)
+$(OUTPUT_CHECK_BINARY_FILE): $(COMMON_OBJ_FILES) $(OBJ_FILES_TO_LINK_FOR_TESTS) $(OBJ_FILES_TO_LINK_FOR_USER)
 	gcc -g -o \
-	$(OUTPUT_CHECK_BINARY_FILE) $(OBJ_FILES_TO_LINK) \
+	$(OUTPUT_CHECK_BINARY_FILE) $(COMMON_OBJ_FILES) $(OBJ_FILES_TO_LINK_FOR_TESTS) \
 	-lcheck -lm -lpthread -lrt -lsubunit
 
 	gcc -g -o \
-	$(OUTPUT_BINARY_FILE) $(OBJ_FILES_TO_LINK) \
+	$(OUTPUT_USER_BINARY_FILE) $(COMMON_OBJ_FILES) $(OBJ_FILES_TO_LINK_FOR_USER) \
 	-lm
-
 
 
 ./obj/vector_ops.o: ./src/vector_ops.c
@@ -28,7 +29,6 @@ $(OUTPUT_CHECK_BINARY_FILE): $(OBJ_FILES_TO_LINK)
 	-Wshadow \
 	-Wfloat-equal \
 	-Wparentheses \
-	-Wunsuffixed-float-constants \
 	-Wunused \
 	-Wunused-const-variable \
 	-Wunused-variable \
@@ -48,7 +48,6 @@ $(OUTPUT_CHECK_BINARY_FILE): $(OBJ_FILES_TO_LINK)
 	-Wshadow \
 	-Wfloat-equal \
 	-Wparentheses \
-	-Wunsuffixed-float-constants \
 	-Wunused \
 	-Wunused-const-variable \
 	-Wunused-variable \
@@ -57,7 +56,7 @@ $(OUTPUT_CHECK_BINARY_FILE): $(OBJ_FILES_TO_LINK)
 	mv ./vector_pool.o ./obj/vector_pool.o
 
 
-./obj/safetyChecks.c: ./src/safetyChecks.c
+./obj/safetyChecks.o: ./src/safetyChecks.c
 	gcc -c \
 	-Wall \
 	-Wextra \
@@ -68,13 +67,31 @@ $(OUTPUT_CHECK_BINARY_FILE): $(OBJ_FILES_TO_LINK)
 	-Wshadow \
 	-Wfloat-equal \
 	-Wparentheses \
-	-Wunsuffixed-float-constants \
 	-Wunused \
 	-Wunused-const-variable \
 	-Wunused-variable \
 	-Werror \
 	./src/safetyChecks.c
 	mv ./safetyChecks.o ./obj/safetyChecks.o
+
+
+./obj/check_vector.o: ./tests/check_vector.c
+	gcc -c \
+	-Wall \
+	-Wextra \
+	-Wunreachable-code \
+	-ftabstop=4 \
+	-Wmisleading-indentation \
+	-Wdouble-promotion \
+	-Wshadow \
+	-Wfloat-equal \
+	-Wparentheses \
+	-Wunused \
+	-Wunused-const-variable \
+	-Wunused-variable \
+	-Werror \
+	./tests/check_vector.c
+	mv ./check_vector.o ./obj/check_vector.o
 
 
 .PHONY: clean
