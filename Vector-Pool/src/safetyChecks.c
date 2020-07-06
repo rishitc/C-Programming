@@ -3,12 +3,12 @@
 */
 #ifndef STDIO_H
     #define STDIO_H
-    #include<stdio.h>
+    #include <stdio.h>
 #endif
 
 #ifndef STDLIB_H
     #define STDLIB_H
-    #include<stdlib.h>
+    #include <stdlib.h>
 #endif
 
 #ifndef TYPES_H
@@ -22,7 +22,7 @@
 #endif
 
 
-void checkPtr(VectorElement *vec, char *fileName, int lineNo, char *ptrName) {
+void checkPtr(VectorElement *vec, const char *fileName, const int lineNo, const char *ptrName) {
     if(vec == NULL) {
         printf("Dynamic Memory Allocation Failed!\n");
         printf("File Name.: %s\n", fileName);
