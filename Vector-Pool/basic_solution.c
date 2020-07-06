@@ -31,7 +31,7 @@ int main()
         scanf("%d%d",&n,&k);
         double *A = malloc(n*sizeof(double));
 
-        int size_b = n/k + (n%k?1:0);
+        int size_b = n/k + ((n%k)?1:0);
         double *B = malloc(size_b*sizeof(double));
 
         for(int i=0;i<n;i++)
