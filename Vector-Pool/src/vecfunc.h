@@ -13,7 +13,7 @@
 
 
 Vector createVector(int arg_count);  // vector_ops.c
-bool appendElement(Vector vec, double element);  // vector_ops.c
+bool appendElement(Vector *vec, double element);  // vector_ops.c
 bool destoryVector(Vector *vec);  // vector_ops.c
 Vector poolVector(Vector vec, int windowSize);  // vector_ops.c
 void checkPtr(VectorElement *vec, char *fileName, int lineNo, char *ptrName);  // safetyChecks.c
