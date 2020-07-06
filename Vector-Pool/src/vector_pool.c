@@ -33,20 +33,23 @@ int main() {
         double ele = 0;
         scanf("%lf", &ele);
 
-        if(!appendElement(&vec, (double)ele)) // If the addition of an element fails, then break out of the loop
+        if(!appendElement(&vec, ele)) // If the addition of an element fails, then break out of the loop
             break;
     }
 
+    printf("\nThe Input Vector is:\n");
     for(int i = 0; i < vec.length; ++i) {
-        printf("%lf\n", vec.head[i].data);
+        printf("%.6lf\n", vec.head[i].data);
     }
 
     Vector result = poolVector(vec, lengthOfTheWindow);
 
+    printf("\nThe Result Vector is:\n");
     for(int i = 0; i < result.length; ++i) {
-        printf("%lf\n", result.head[i].data);
+        printf("%.6lf\n", result.head[i].data);
     }
 
     destoryVector(&vec);
+    destoryVector(&result);
     return 0;
 }
