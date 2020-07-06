@@ -1,7 +1,7 @@
 all: ./bin/check_vector
 
 
-OBJ_FILES_TO_LINK = ./obj/vector_ops.o ./obj/vector_pool.o ./obj/safetyChecks.c
+OBJ_FILES_TO_LINK = ./obj/vector_ops.o ./obj/vector_pool.o ./src/safetyChecks.c
 OUTPUT_CHECK_BINARY_FILE = ./bin/check_vector
 OUTPUT_BINARY_FILE = ./bin/vector
 
