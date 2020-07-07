@@ -7,5 +7,5 @@ This repository is a mix of easy and hard programs and everything in between.
 
 Index of Programs in this repository:
 
-1. Vector Pooling
-   1. This program takes and input a vector and a window size and the performs vector pooling and returns the condensed vector. Visit its folder to find out more.
+1.  Vector Pooling
+   1.  This program takes and input a vector and a window size and the performs vector pooling and returns the condensed vector. Visit its folder to find out more.
