@@ -1,6 +1,6 @@
 # Setting up Check
 
-### A Unit Testing Framework for C
+## A Unit Testing Framework for C
 
 ---
 
@@ -9,20 +9,18 @@ For setting up the [Check Framework](https://libcheck.github.io/check/) I would 
 One thing I would recommend is that after running the three commands mentioned on the web-page for [compiling and installing from source](https://libcheck.github.io/check/web/install.html#linuxsource) also run the following command to make sure that the `check.h` header file is available for your project to use.
 
 ```bash
-$ sudo ldconfig
+sudo ldconfig
 ```
 
 So all the *four commands* you need to run in the downloaded check folder, to compile and install the framework from source are:
 
 ```bash
-$ ./configure
-$ make
-$ make check
-$ sudo make install
-$ sudo ldconfig
+./configure
+make
+make check
+sudo make install
+sudo ldconfig
 ```
-
-
 
 **Note:** I also recommend to the compiler flag `-lsubunit` while linking the test object file to all your other files. I did not see this mentioned anywhere except on a GitHub issue on the project, but it solved all the linking issues for me.
 
