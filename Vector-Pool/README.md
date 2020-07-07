@@ -23,4 +23,3 @@ sudo ldconfig
 ```
 
 **Note:** I also recommend to the compiler flag `-lsubunit` while linking the test object file to all your other files. I did not see this mentioned anywhere except on a GitHub issue on the project, but it solved all the linking issues for me.
-
