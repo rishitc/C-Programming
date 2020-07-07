@@ -1,4 +1,7 @@
 # C-Programming
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/205a7391efe649a28196b459d27b8470)](https://app.codacy.com/manual/rishit.c/C-Programming?utm_source=github.com&utm_medium=referral&utm_content=rishitc/C-Programming&utm_campaign=Badge_Grade_Dashboard)
+
 This repository contains all the programs related to the C programming  language.
 
 Every program has its own folder to better explain how it works. I'll try adding LaTeX articles to each program to make understanding it easier.
