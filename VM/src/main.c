@@ -9,8 +9,6 @@
 #include "program.h"
 
 
-int ip = 0;  // Instruction pointer for our VM 
-int sp = -1; // The stack pointer for our VM
 bool running = true;
 
 int stack[256];  // Creating a stack of integers
@@ -19,7 +17,7 @@ int registers[NUM_OF_REGISTERS];  // Creating an array of registers
 // Fetch function
 int fetch() {
 	return program[registers[IP]];
-}
+} // End of fetch() function
 
 // Evaluate function
 void eval(int instr) {
@@ -56,16 +54,14 @@ void eval(int instr) {
 			int result = b + a;
 			stack[++registers[SP]] = result;  // Increment the stack pointer to point to a new location and push the result onto the stack
 			break;
-		} // End of case ADD
-
-		
-
-	}
-}
+		} // End of case ADD		
+	} // End of Switch-Case Ladder
+} // End of eval() function
 
 int main() {
 	while (running) {
 		eval(fetch());
-	}
+		++registers[IP];
+	} // End of while() loop
 	return 0;
-}
+} // End of main() function
