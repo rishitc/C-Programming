@@ -12,3 +12,5 @@ Index of Programs in this repository:
 
  1. Vector Pooling
      - This program takes and input a vector and a window size and the performs vector pooling and returns the condensed vector. Visit its folder to find out more.
+ 2. VM
+      1. This program creates a simple toy Virtual Machine which supports a simple set of instructions, has a stack as well as a few registers. It does not target any specific computer architecture at the moment.
