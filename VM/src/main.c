@@ -1,8 +1,13 @@
 #include <stdbool.h>
+#include <stdio.h>
 
-#include "program.h"
+// Header files containing the instructions and registers supported by the VM
 #include "instructions.h"
 #include "registers.h"
+
+// Header file containing the program we have written
+#include "program.h"
+
 
 int ip = 0;  // Instruction pointer for our VM 
 int sp = -1; // The stack pointer for our VM
@@ -61,5 +66,6 @@ void eval(int instr) {
 int main() {
 	while (running) {
 		eval(fetch());
+	}
 	return 0;
 }
